@@ -2,16 +2,16 @@
 1. 使用File的length方法
 2. 使用FileInputStream的available()方法
 ### 使用的文件
-![img](source/java_file_size.png)
+![img](images/java_file_size.png)
 1. 使用File的length()方法
     ```
-    public static void main(String[] args) {  
+    public static void main(String[] args) {
         File f= new File("D:\\CentOS-6.5-x86_64-bin-DVD1.iso");  
-        if (f.exists() && f.isFile()){  
-            logger.info(f.length());  
-        }else{  
+        if (f.exists() && f.isFile()){
+            logger.info(f.length());
+        }else{
             logger.info("file doesn't exist or is not a file");  
-        }  
+        }
     }
     ```
     > 输出的结果 4467982336 结果是4.16GB，与Windows上显示的结果一致。

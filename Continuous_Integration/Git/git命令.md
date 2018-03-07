@@ -35,14 +35,20 @@ git gc --auto
 git将远程分支更新到最新状态(删除已废弃的远程branch)
 ```text
 git fetch -p
+or
+git remote prune origin
 ```
 git查看分支
 ```text
 git branch -a
 ```
-git创建分支
+git创建本地分支
 ```text
 git branch [branch name]
+```
+git推送本地分支至远程
+```text
+git push --set-upstream origin [branch name]
 ```
 git切换分支
 ```text
@@ -57,4 +63,33 @@ git删除远程分支
 git branch -r -d origin/[branch name]
 git push origin :[branch name]
 ```
+git放弃本地修改强制更新
+```text
+git fetch --all
+git reset --hard origin/master
+```
+> git fetch 只是下载远程的库的内容，不做任何的合并 git reset 把Head指向刚刚下载的最新的版本
 
+系统出现如下错误：warning: LF will be replaced by CRLF
+```text
+git config --gobal core.autocrlf false  //未实际操作过
+```
+git配置ssl认证
+```text
+git config --system http.sslverify false/true
+```
+git查看当前用户名和邮箱地址
+```text
+git config user.name
+git config user.email
+修改
+git config --global user.name "username"
+git config --global user.email "email"
+```
+> 会生成.gitconfig 文件   
+仅仅是用于提交时的用户信息配置，并非用户名密码
+
+通过git命令可以存储git账号名密码，第一次需要输入，之后不需要在当前系统下会生成.git-credentials 文件用于存储用户名密码
+```text
+git config --global credential.helper store
+```

@@ -70,6 +70,13 @@ git reset --hard origin/master
 ```
 > git fetch 只是下载远程的库的内容，不做任何的合并 git reset 把Head指向刚刚下载的最新的版本
 
+git reset命令
+```text
+git reset --hard HEAD^  //回退到上一个版本
+git reset --hard HEAD^100  //回退到上100个版本
+git reset --hard [log id]  //回退到指定log id 的版本
+```
+
 系统出现如下错误：warning: LF will be replaced by CRLF
 ```text
 git config --gobal core.autocrlf false  //未实际操作过

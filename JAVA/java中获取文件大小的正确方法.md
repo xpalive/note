@@ -73,4 +73,6 @@ public static void main(String[] args) {
     }
 }
 ```
+> *fc = fis.getChannel();*  
+  *fc.size()*
     

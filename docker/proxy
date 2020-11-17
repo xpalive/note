@@ -1,0 +1,15 @@
+https://docs.docker.com/config/daemon/systemd/#httphttps-proxy
+
+sudo mkdir -p /etc/systemd/system/docker.service.d
+Create a file named /etc/systemd/system/docker.service.d/http-proxy.conf that adds the HTTP_PROXY environment variable:
+[Service]
+Environment="HTTP_PROXY=http://proxy.example.com:80"
+Environment="HTTPS_PROXY=https://proxy.example.com:443"
+Environment="NO_PROXY=localhost,127.0.0.1,docker-registry.example.com,.corp"
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+Verify that the configuration has been loaded and matches the changes you made, for example:
+
+sudo systemctl show --property=Environment docker

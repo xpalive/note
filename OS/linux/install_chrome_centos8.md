@@ -1,5 +1,13 @@
+```html
+https://linuxize.com/post/how-to-install-google-chrome-web-browser-on-centos-8/
+```
+
+```
 https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 sudo dnf localinstall google-chrome-stable_current_x86_64.rpm
+```
+
+
 
 Updating Chrome Browser
 

@@ -10,3 +10,10 @@ sudo yum install -y bash-completion
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.24.1/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 source /etc/bash_completion.d/docker-compose
 ```
+
+> 需要编译文件 source /usr/share/bash-completion/bash_completion
+> 需要编译文件 source /usr/share/bash-completion/completions/docker
+```shell script
+/usr/share/bash-completion/completions/docker
+/usr/share/bash-completion/completions/docker-compose
+```

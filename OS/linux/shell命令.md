@@ -1,2 +1,6 @@
-1. 命令补全
-ubuntu : sudo apt-get install bash-complection
+### linux命令
+1. 查看磁盘空间  
+    > dh -f
+1. 查看内存空间
+    > top 后输入M
+

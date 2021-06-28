@@ -61,6 +61,7 @@ docker run -d \
 --name mongo01 \
 --network bear-net \
 -v /data/mongo/datadir:/data/db \
+-v /data/mongo/conf:/etc/mongo \
 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
 -e MONGO_INITDB_ROOT_PASSWORD=secret \
 -p 27017:27017 \

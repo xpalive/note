@@ -3,8 +3,13 @@
   ```shell script
     docker network ls;
     docker network create bear-net
-  ```
 
+    #清除容器
+    docker system prune --filter "label=name=mongo01"
+  ```
+> 运行容器时添加label标签用于裁剪清理过滤
+
+本机linux密码
 ```shell script
 passwd:xpalive/123456789
 passwd:root/123456789
@@ -18,6 +23,7 @@ conf sample : https://raw.githubusercontent.com/redis/redis/6.0/redis.conf
 docker run -d \
 --name redis01 \
 --network bear-net \
+-l name=redis01 \
 -v /data/redis/conf:/usr/local/etc/redis \
 -v /data/redis/data:/data \
 -p 6379:6379 \
@@ -42,6 +48,7 @@ daemonize  使用docker时必须为no否则docker无法启动
 docker run -d \
 --name mysql01 \
 --network bear-net \
+-l name=mysql01 \
 -e MYSQL_ROOT_PASSWORD=123456789 \
 -e MYSQL_ROOT_HOST=% \
 -e TZ=Asia/Shanghai \
@@ -60,6 +67,7 @@ mysql:5.7.34
 docker run -d \
 --name mongo01 \
 --network bear-net \
+-l name=mongo01 \
 -v /data/mongo/datadir:/data/db \
 -v /data/mongo/conf:/etc/mongo \
 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
